@@ -23,10 +23,4 @@ public class Kelas
     public String getJurusan(){
         return this.jurusan;
     }
-
-    @Override
-    public String toString(){
-        return String.format("%s\t %s\t %s",
-        nama, tahunAjaran, jurusan);
-    }
 }

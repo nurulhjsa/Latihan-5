@@ -12,58 +12,48 @@ public class Mahasiswa
     private Integer angkatan;
     private Kelas kelas;
 
-    public String getNim(){
-        return this.nim;
+    public Mahasiswa(
+                    String nim,
+                    String nama,
+                    LocalDate tanggalLahir,
+                    Integer angkatan,
+                    Kelas kelas){
+        this.nim = nim;
+        this.nama = nama;
+        this.tanggalLahir = tanggalLahir;
+        this.angkatan = angkatan;
+        this.kelas = kelas;
     }
 
-    public void setNim(String nim){
-        this.nim = nim;
+    public String getNim(){
+        return this.nim;
     }
 
     public String getNama(){
         return this.nama;
     }
 
-    public void setNama(String nama){
-        this.nama = nama;
-    }
-
     public LocalDate getTanggalLahir(){
         return this.tanggalLahir;
-    }
-
-    public void setTanggalLahir(LocalDate tanggalLahir){
-        this.tanggalLahir = tanggalLahir;
     }
 
     public Integer getAngkatan(){
         return this.angkatan;
     }
 
-    public void setAngkatan(Integer angkatan){
-        this.angkatan = angkatan;
-    }
-
     public Kelas getKelas(){
         return this.kelas;
     }
 
-    public void setKelas(Kelas kelas){
-        this.kelas = kelas;
-    }
-
-    public static void main(String[] args){
-    List <Kelas> list = new ArrayList<>();
-        list.add(
-            new Kelas("Dimas Maryanto", new Integer(2014), "Teknik Informatika"));
-        list.add(
-            new Kelas("Muhamad Yusuf", new Integer(2014), "Sistem Informasi"));
-        list.add(
-            new Kelas("Hari Sapto Adi", new Integer(2014), "Sistem Informasi"));
-        list.add(
-            new Kelas("Hariaty", new Integer(2014), "Teknik Informatika"));
-
-    for(Kelas n: list){
-        System.out.println(n.toString());}
+    public String toString(){
+        return String.format(
+            "| %s\t| %s | %s\t| %s\t| %s\t| %s|",
+            this.nim,
+            this.nama,
+            this.tanggalLahir,
+            this.angkatan,
+            this.kelas.getNama(),
+            this.kelas.getJurusan()
+        );
     }
 }
